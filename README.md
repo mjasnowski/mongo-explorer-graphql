@@ -6,7 +6,7 @@ The front-end sends graphql queries using Axios and POST requests, longer term I
 
 The Schema for the GraphQL queries is
 
-<code>
+<pre>
        type Database {
             name: String!
         }
@@ -26,4 +26,4 @@ The Schema for the GraphQL queries is
             query: RootQuery
         }
         
-</code>
+</pre>
