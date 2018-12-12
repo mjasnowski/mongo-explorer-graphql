@@ -1,6 +1,6 @@
 # mongo-explorer-graphql
 
-This is the same MongoDB Explorer prototype as github.com/mjasnowski/mongo-explorer but has a GraphQL backend
+This is the same MongoDB Explorer prototype as <b>https://github.com/mjasnowski/mongo-explorer</b> but has a GraphQL backend
 
 The front-end sends graphql queries using Axios and POST requests, longer term I will be looking at something like Apollo on the front-end.
 
