@@ -36,6 +36,7 @@ The graphiql debug UI is enabled in mongoServer.js so you can try out queries w/
 
 <img src="https://github.com/mjasnowski/mongo-explorer-graphql/blob/master/screenshots/screenshot1.png"/>
 
+
 <b>Screen Shot 2 / Using Graphiql Debug UI<b>
 
 <img src="https://github.com/mjasnowski/mongo-explorer-graphql/blob/master/screenshots/screenshot2.png"/>
