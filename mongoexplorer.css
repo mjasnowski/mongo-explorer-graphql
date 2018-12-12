@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+.Header {
+    font-size: 1em;
+    font-family: Arial;
+    padding: 4px;
+    margin: 4px;
+    background-color: lightgrey;
+    border-radius: 12px;
+}
+
+.EchoText {
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2rem;
+    color: #e4e4e4;  
+    width: 80%; 
+    float:left;
+}
+
+.EchoButton {
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2rem;
+    color: #e4e4e4;  
+}
+
+.EchoInput {
+    width: 100%;
+}
+
+html, body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: lightblue;  
+    height: 100%;
+  }
+
+  .App {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      align-content: stretch;
+      flex-direction: row;
+      height: 100%;
+      width: 100%;
+      border: 2px solid darkgrey;
+      border-radius: 12px;
+  }
+
+  .Database {
+      cursor: pointer;
+      height: 40px;
+      font-size: 2rem;
+      padding: 4%;
+  }
+
+  .Database > div {
+      height: 40px;
+      font-size: 1rem;
+      text-align: left;  
+      padding: 4%;
+      color: black;
+      background-color: white;   
+      margin: 4px;
+      border-radius: 6px;
+  }
+
+  .Database:hover {
+    background-color: darkgrey;
+    color: white;
+  }
+
+  .DatabaseList {
+      border: 2px solid darkgrey;
+      border-radius: 12px;
+      margin: 4%;
+      padding: 4%;
+      height: 100%;
+      width: 20%;
+  }
+
+  .DatabaseCollections {
+      border: 2px solid darkgrey;
+      border-radius: 12px;  
+      margin: 4%;  
+      padding: 4%;
+      height: 100%;
+      width: 80%;
+  }
+
+  .DatabaseDocument {
+      white-space: nowrap;
+      color: black;
+  }
+  .DocumentViewer {
+      overflow: auto;
+      height: 720px;
+      margin: auto;
+  }
+
+  .Document {
+      border: 1px solid darkgrey;
+      border-radius: 6px;
+      display: flex;
+      background-color: white; 
+      padding: 2%;  
+      margin: 4px; 
+  }

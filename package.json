@@ -1,0 +1,33 @@
+{
+  "name": "mongo-explorer-graphql",
+  "version": "1.0.0",
+  "description": "MongDB Database Explorer with a REACT front-end, Express MongoDB Front-End using GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "build-dev": "webpack -wd",
+    "build-run": "nodemon --exec babel-node ./src/js/mongoServer.js"
+  },
+  "author": "Mike Jasnowski",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
+    "mongodb": "^3.1.10",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/node": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "nodemon": "^1.18.8",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
