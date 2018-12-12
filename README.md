@@ -4,7 +4,7 @@ This is the same MongoDB Explorer prototype as github.com/mjasnowski/mongo-explo
 
 The front-end sends graphql queries using Axios and POST requests, longer term I will be looking at something like Apollo on the front-end.
 
-The Schema for the GraphQL queries is
+The Schema for the GraphQL queries are:
 
 <pre>
        type Database {
