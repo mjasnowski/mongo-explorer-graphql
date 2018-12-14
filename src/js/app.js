@@ -5,7 +5,8 @@ import DatabaseCollections from './db/databaseCollections';
 import DatabaseCollectionDocument from './db/databaseCollectionDocument';
 import DatabaseQuery from './db/databaseQuery';
 
-import axios from 'axios';
+import * as query from './query/graphql';
+
 
 class App extends React.Component {
     constructor(props){
@@ -28,7 +29,7 @@ class App extends React.Component {
     // Retrieves the list of databases
     //
     getDatabases(){
-        axios.post("/graphql",{"query":"query{databases{name}}"})
+        query.getDatabases()
         .then(resp => {
             this.setState({
                 databases: resp.data.data
@@ -44,8 +45,7 @@ class App extends React.Component {
     //
     getDatabaseCollections(databaseName){
         let database = databaseName.target.id;
-        let queryStr = `query{collections(dbName:"${database}"){name}}`;
-        axios.post("/graphql",{"query":queryStr})
+        query.getDatabaseCollections(databaseName)
         .then(resp => {
             this.setState( {
                 collections : resp.data.data,
@@ -63,8 +63,7 @@ class App extends React.Component {
     //
     getDatabaseCollection(collectionName){
         let collection = collectionName.target.id;
-        let queryStr = `query{collection(dbName:"${this.state.currentDatabase}",cName:"${collection}"){document}}`;
-        axios.post("/graphql",{"query":queryStr})
+        query.getDatabaseCollection(this.state.currentDatabase,collectionName)
         .then(resp => {
             this.setState( {
                 collection : resp.data.data,
@@ -87,8 +86,7 @@ class App extends React.Component {
             // This is so the mongo db query stays properly formatted as a JSON expression
             messageValue = messageValue.replace(/\"/g,'\\"');
         }
-        let queryStr = `query{find(dbName:"${this.state.currentDatabase}",cName:"${this.state.currentCollection}",filter:"${messageValue}"){document}}`;  
-        axios.post("/graphql",{"query":queryStr})
+        query.queryDatabase(this.state.currentDatabase, this.state.currentCollection, messageValue)
         .then(resp => { 
             // Contruct collection because the query comes back typed as 'find'
             let newCollection = { "collection": Object.assign(resp.data.data.find) };   
