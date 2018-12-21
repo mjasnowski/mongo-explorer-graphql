@@ -30,7 +30,7 @@ The Schema for the GraphQL queries are:
         
 </pre>
 
-<b>Screen Shot 1 / Main Explorer Window<b>
+<b>Screen Shot 1 / Main Explorer Window</b>
 
 <img src="https://github.com/mjasnowski/mongo-explorer-graphql/blob/master/screenshots/screenshot1.png"/>
 
