@@ -30,12 +30,11 @@ The Schema for the GraphQL queries are:
         
 </pre>
 
-The graphiql debug UI is enabled in mongoServer.js so you can try out queries w/o the front-end by using <b>localhost:8080/graphql</b>
-
 <b>Screen Shot 1 / Main Explorer Window<b>
 
 <img src="https://github.com/mjasnowski/mongo-explorer-graphql/blob/master/screenshots/screenshot1.png"/>
 
+The graphiql debug UI is enabled in mongoServer.js so you can try out queries w/o the front-end by using <b>localhost:8080/graphql</b>
 
 <b>Screen Shot 2 / Using Graphiql Debug UI<b>
 
