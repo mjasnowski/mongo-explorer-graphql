@@ -19,7 +19,7 @@ let mdb;
 // Establish connection object
 MongoClient.connect(`mongodb://${mongoHost}:${mongoPort}`, (err, database) => {
     mdb = database;
-    console.log("MongoDB Database Connected To...");
+    console.log(`MongoDB Explorer Server Connection to MongoDB Instance at ${mongoHost}:${mongoPort}`);
 });
 
 // Tell Express to use the current directory for static content for now (i.e. index.html)
