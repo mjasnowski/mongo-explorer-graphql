@@ -107,4 +107,9 @@ html, body {
       background-color: white; 
       padding: 2%;  
       margin: 4px; 
+      justify-content: space-between;
+  }
+
+  .DELETE_BUTTON {
+      cursor: pointer;
   }

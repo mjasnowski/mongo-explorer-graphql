@@ -23,6 +23,8 @@ class App extends React.Component {
         this.getDatabaseCollections = this.getDatabaseCollections.bind(this);
         this.getDatabaseCollection = this.getDatabaseCollection.bind(this);
         this.queryDatabase = this.queryDatabase.bind(this);
+
+        this.deleteDocument = this.deleteDocument.bind(this);
     }
 
     //
@@ -100,6 +102,22 @@ class App extends React.Component {
     }   
 
     //
+    // Sends a delete document request for the current database and collection
+    //
+    deleteDocument(evt){
+        alert("Delete Document in progress...");
+        // query.deleteDatabase(this.state.currentDatabase,this.state.currentCollection)
+        // .then(resp => {
+        //     this.setState( {
+        //         result : resp.data.data
+        //     });
+        // })
+        // .catch(error => {
+        //     alert("An Error Occurred during Document Delete: " + error);
+        // });        
+    }
+
+    //
     // Render the UI elements
     //
     render(){
@@ -122,7 +140,7 @@ class App extends React.Component {
               <div className="APPLICATION_CONTENT">
                <Header label="Documents"/>   
                <DatabaseQuery handleQuery={this.queryDatabase}/>
-               <DatabaseCollectionDocument id={'COLLECTION_DOCUMENT_ID'} value={this.state.collection}/>                                               
+               <DatabaseCollectionDocument id={'COLLECTION_DOCUMENT_ID'} value={this.state.collection} handleClick={this.deleteDocument}/>                                               
               </div>
             </div>
         );

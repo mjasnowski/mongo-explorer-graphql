@@ -22,3 +22,8 @@ export const queryDatabase = (databaseName, collectionName, filter) => {
     return axios.post("/graphql",{"query":queryStr})    
 }
 
+export const deleteDocument = (databaseName, collectionName, documentId) => {
+    let queryStr = `query{collection(dbName:"${databaseName}",cName:"${collection}"){document},documentId:"${documentId}}`;
+    return axios.post("/graphql",{"query":queryStr})    
+}
+

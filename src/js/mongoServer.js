@@ -1,10 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectID } from 'mongodb';
 
 import graphqlHttp from 'express-graphql';
 import { buildSchema } from 'graphql';
-import { resolve } from 'url';
 
 const server = express();
 
@@ -47,8 +46,18 @@ server.use('/graphql', graphqlHttp({
             collection(dbName: String!, cName: String!): [CollectionDocument!]!
             find(dbName: String!, cName: String!, filter: String!): [CollectionDocument!]!
         }
+
+        type Result {
+            success: Boolean!
+        }
+
+        type RootMutation {
+            deleteDocument(dbName: String!, cName: String!, documentId: String!): Result!
+        }
+
         schema {
             query: RootQuery
+            mutation: RootMutation
         }
     `),
     rootValue: {
@@ -102,7 +111,14 @@ server.use('/graphql', graphqlHttp({
                 }
                 return col;
             })
-        }         
+        },
+        
+        deleteDocument: async (args) => {
+            let query = {"_id":ObjectID(args.documentId)};
+            return await mdb.db(args.dbName).collection(args.cName).deleteOne(query).then (result => {
+                return {"success": (result.deletedCount == 1)};
+            })
+        }
 
     },
     graphiql: true
@@ -120,9 +136,9 @@ server.use('/graphql', graphqlHttp({
 // });
 
 // Retrieve Database Statistics
-server.get(['/databases/:database/stats'], function(req, res) {
-    mdb.db(`${req.params.database}`).stats().then (stats => res.send ({stats: stats }));     
-});
+// server.get(['/databases/:database/stats'], function(req, res) {
+//     mdb.db(`${req.params.database}`).stats().then (stats => res.send ({stats: stats }));     
+// });
 
 // Start the BackEnd Server
 server.listen(port,host, () => {
